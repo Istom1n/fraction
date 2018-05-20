@@ -31,7 +31,6 @@ def get_num_dem(fraction: float) -> (int, int):
         fraction *= -1.0
 
     x = fraction
-    count = 0
 
     # Loop finding terms until denominator gets too big
     while m[1, 0] * a_i + m[1, 1] <= 1000:
@@ -40,6 +39,7 @@ def get_num_dem(fraction: float) -> (int, int):
         t = m[0, 0] * a_i + m[0, 1]
         m[0, 1] = m[0, 0]
         m[0, 0] = t
+
         t = m[1, 0] * a_i + m[1, 1]
         m[1, 1] = m[1, 0]
         m[1, 0] = t
@@ -49,7 +49,7 @@ def get_num_dem(fraction: float) -> (int, int):
 
         x = 1 / (x - float(a_i))
 
-        # math.inf & float('int') didn't work properly
+        # math.inf & float('inf') didn't work properly
         if x > float(0x7FFFFFFF):
             break
 
