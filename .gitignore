@@ -1,3 +1,5 @@
 venv/
 .idea/
-vscode/
+.vscode/
+.mypy_cache/
+.pytest_cache/
